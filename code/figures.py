@@ -109,7 +109,7 @@ def fig2_tier_exposure(vectors):
 
     # Expert-elicited exposures from §4.2 (recomputed with v2.1 sensitivities)
     expert_exp = {
-        "Junior": 0.75, "Mid": 0.73, "Senior": 0.56, "Principal": 0.37,
+        "Junior": 0.75, "Mid": 0.74, "Senior": 0.58, "Principal": 0.41,
     }
 
     x = np.arange(len(tiers))

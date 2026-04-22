@@ -1,0 +1,151 @@
+{
+  "n_tasks": 5,
+  "per_channel": {
+    "K": {
+      "pearson_r": 0.8526268862900748,
+      "mae": 7.0
+    },
+    "I": {
+      "pearson_r": 0.7113879915305904,
+      "mae": 3.0
+    },
+    "P": {
+      "pearson_r": 0.9612039551927889,
+      "mae": 9.0
+    },
+    "A": {
+      "pearson_r": 0.9263671131731709,
+      "mae": 4.2
+    },
+    "C": {
+      "pearson_r": 0.3952847075210474,
+      "mae": 2.0
+    },
+    "T": {
+      "pearson_r": 0.8841543382477383,
+      "mae": 10.0
+    },
+    "R": {
+      "pearson_r": 0.5292973096694771,
+      "mae": 3.2
+    }
+  },
+  "overall": {
+    "pearson_r": 0.8543141908150418,
+    "mae": 5.485714285714286
+  },
+  "tasks": [
+    {
+      "task_id": 21670,
+      "title": "Software Developers",
+      "task": "Modify existing software to correct errors, adapt it to new hardware, or upgrade interfaces and improve performance.",
+      "K": 15,
+      "I": 25,
+      "P": 10,
+      "A": 0,
+      "C": 5,
+      "T": 40,
+      "R": 5
+    },
+    {
+      "task_id": 21675,
+      "title": "Software Developers",
+      "task": "Specify power supply requirements and configuration.",
+      "K": 45,
+      "I": 35,
+      "P": 5,
+      "A": 5,
+      "C": 5,
+      "T": 5,
+      "R": 0
+    },
+    {
+      "task_id": 14654,
+      "title": "Software Quality Assurance Analysts and Testers",
+      "task": "Monitor program performance to ensure efficient and problem-free operations.",
+      "K": 15,
+      "I": 25,
+      "P": 30,
+      "A": 5,
+      "C": 5,
+      "T": 15,
+      "R": 5
+    },
+    {
+      "task_id": 14643,
+      "title": "Software Quality Assurance Analysts and Testers",
+      "task": "Monitor bug resolution efforts and track successes.",
+      "K": 10,
+      "I": 20,
+      "P": 45,
+      "A": 5,
+      "C": 5,
+      "T": 10,
+      "R": 5
+    },
+    {
+      "task_id": 14719,
+      "title": "Web Developers",
+      "task": "Recommend and implement performance improvements.",
+      "K": 20,
+      "I": 30,
+      "P": 10,
+      "A": 0,
+      "C": 0,
+      "T": 35,
+      "R": 5
+    }
+  ],
+  "alt_classifications": [
+    {
+      "task_id": 21670,
+      "K": 28,
+      "I": 22,
+      "P": 15,
+      "A": 5,
+      "C": 8,
+      "T": 18,
+      "R": 4
+    },
+    {
+      "task_id": 21675,
+      "K": 35,
+      "I": 25,
+      "P": 15,
+      "A": 8,
+      "C": 5,
+      "T": 10,
+      "R": 2
+    },
+    {
+      "task_id": 14654,
+      "K": 20,
+      "I": 25,
+      "P": 20,
+      "A": 8,
+      "C": 7,
+      "T": 12,
+      "R": 8
+    },
+    {
+      "task_id": 14643,
+      "K": 15,
+      "I": 20,
+      "P": 30,
+      "A": 10,
+      "C": 5,
+      "T": 5,
+      "R": 15
+    },
+    {
+      "task_id": 14719,
+      "K": 22,
+      "I": 28,
+      "P": 15,
+      "A": 5,
+      "C": 5,
+      "T": 20,
+      "R": 5
+    }
+  ]
+}

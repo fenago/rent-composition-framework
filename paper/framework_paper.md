@@ -1,10 +1,11 @@
 # Itemizing the Knowledge Tax: A Rent Composition Framework for Predicting AI Exposure Across Professional Services
 
-**Ernesto Lee, DBA**
+**Dr. Ernesto Lee**
 School of Engineering and Technology, Miami Dade College
 elee@mdc.edu | ORCID: [0000-0002-1209-8565](https://orcid.org/0000-0002-1209-8565)
+Replication materials: https://github.com/fenago/rent-composition-framework
 
-*Working draft — version 2.1, April 2026*
+*Working draft — version 3.0, April 2026*
 
 ---
 
@@ -14,7 +15,7 @@ Generative AI is reshaping professional-services markets faster than any prior t
 
 **For the first time, the framework makes the knowledge tax computable: a single scalar, between zero and one, that captures how much of a role's compensation premium AI can substitute.** The framework decomposes any knowledge-work role's compensation premium into seven distinct rent channels (Knowledge, Interpretation, Process, Access, Credential, Technical, Relational). Each channel carries an AI sensitivity coefficient anchored to published capability benchmarks. Any role's AI exposure is the dot product of its rent composition vector and the current sensitivity vector. The formula is portable, interpretable, and comparable across roles within and between industries.
 
-We illustrate the framework across three professional-services industries. In Architecture, Engineering, and Construction, agent-based simulation calibrated to public fee surveys shows General Contractors facing higher exposure than Owner's Representatives. This is a refinement rather than a reversal of Reddy's narrative: all three roles compress, but the distributional consequences differ sharply by rent composition. In Software Engineering we identify the *Builder's Paradox*: the profession that builds AI is subject to its own tools, with real 2023–2025 hiring data already consistent with a barbell outcome in which junior and mid-tier roles compress while senior and principal roles hold. We additionally report an empirical measurement of the software engineering rent vector using seventy-eight O*NET task statements classified by large language model into the seven channels with five-hundred-iteration bootstrap confidence intervals. The measured aggregate exposure score (0.58, 95% CI 0.55–0.61) validates the framework's expert-elicited value (0.61), while the channel-level measurement reveals that expert elicitation systematically over-weights Interpretation and under-weights Process. In Higher Education we propose the *Mid-Market Mirror* hypothesis: community colleges, whose value proposition rests on skill transfer and accountability rather than credential signaling, are less exposed than elite research universities. Recent National Student Clearinghouse data showing community college enrollment rebound from 2023 onward is consistent with this hypothesis, though not yet causally identified.
+We illustrate the framework across three professional-services industries. In Architecture, Engineering, and Construction, agent-based simulation calibrated to public fee surveys shows General Contractors facing higher exposure than Owner's Representatives. This is a refinement rather than a reversal of Reddy's narrative: all three roles compress, but the distributional consequences differ sharply by rent composition. In Software Engineering we identify the *Builder's Paradox*: the profession that builds AI is subject to its own tools, with real 2023–2025 hiring data already consistent with a barbell outcome in which junior and mid-tier roles compress while senior and principal roles hold. We additionally report an empirical measurement of the software engineering rent vector using seventy-eight O*NET task statements classified by large language model into the seven channels with five-hundred-iteration bootstrap confidence intervals and an inter-prompt reliability check (Pearson r = 0.85 across a held-out five-task sample). The measured aggregate exposure score (0.61, 95% CI 0.59–0.63) validates the framework's expert-elicited value (0.62), while the channel-level measurement reveals that expert elicitation systematically over-weights Interpretation and under-weights Process — a finding that leads us to raise the Process sensitivity coefficient in light of advances in agentic AI. In Higher Education we propose the *Mid-Market Mirror* hypothesis: community colleges, whose value proposition rests on skill transfer and accountability rather than credential signaling, are less exposed than elite research universities. Recent National Student Clearinghouse data showing community college enrollment rebound from 2023 onward is consistent with this hypothesis, though not yet causally identified.
 
 We close with a Role Vulnerability Scorecard that practitioners can apply to any knowledge-work role, three falsifiable predictions by 2030, and an explicit discussion of what the framework does not yet measure.
 
@@ -66,6 +67,8 @@ $$\mathbf{w}_r = (w_K, w_I, w_P, w_A, w_C, w_T, w_R), \quad \sum_i w_i = 1, \qua
 
 Each $w_i$ is the share of role $r$'s asymmetry-based compensation attributable to channel $i$.
 
+**Rent composition is not the same as task composition.** This distinction, which we sharpen here after empirical measurement (Section 4.3a) revealed its importance, is easily conflated. *Task composition* captures what fraction of a practitioner's time is spent on activities in each channel — what she does day to day. *Rent composition* captures what fraction of her compensation *premium* above a competitive-market floor is attributable to each channel — what she is paid the premium for. The two vectors typically differ. A senior engineer may spend forty percent of her time on interpretation-adjacent work (design docs, architecture reviews) but derive only ten percent of her compensation premium from it, because the market does not price that specific work distinctively at her tier. Framework users measuring rent vectors from task-inventory data (O*NET, occupational task lists) are measuring a proxy, not the quantity the framework's formula requires. When rent-attribution data is unavailable, task-composition data can substitute with a documented caveat; it should not be conflated with rent composition itself.
+
 ### 2.3 The AI sensitivity vector, anchored to published benchmarks
 
 The second element is a role-independent AI sensitivity vector $\mathbf{s}$. Each coefficient $s_i \in [0, 1]$ captures the fraction of channel $i$'s rent that frontier AI capability can substitute. Rather than treat these coefficients as free parameters, we anchor each one to published benchmark evidence from 2023 through 2026.
@@ -74,7 +77,7 @@ The second element is a role-independent AI sensitivity vector $\mathbf{s}$. Eac
 |---|---|---|
 | Knowledge (K) | 0.85 | Frontier LLMs perform at or above the mean credentialed professional on closed-knowledge benchmarks. Singhal et al. (2023) reported Med-PaLM 2 at 86.5% on MedQA, exceeding the typical pass threshold for the U.S. Medical Licensing Examination. LegalBench (Guha et al., 2023) similarly finds frontier models above professional baselines on factual retrieval tasks. The residual 0.15 captures tacit, unpublished, and edge-case knowledge. |
 | Interpretation (I) | 0.95 | Frontier models perform at or above expert medians on synthesis and reasoning benchmarks requiring document-level interpretation. Singhal et al. (2023) reported expert-approved answers on long-form medical questions at rates comparable to physicians. GPT-4 and successor models achieve comparable performance on LegalBench reasoning tasks. The residual 0.05 captures irreducible judgment under genuine uncertainty. |
-| Process (P) | 0.30 | AI can inform workflow decisions but cannot execute institutional workflow control without agent-based automation that remains immature in most professional settings. Low coefficient reflects this gap. |
+| Process (P) | 0.45 | Agentic AI systems in 2025–2026 (GitHub agents, autonomous CI/CD, Claude Code, Copilot Workspace, PR-review bots, auto-merge tools) increasingly execute multi-step workflow control tasks that previously required human gatekeeping. Prior framework versions assigned Process a sensitivity of 0.30 on the assumption that institutional workflow remains human-dominated; the empirical measurement in Section 4.3a found Process to be a substantially larger share of software-engineering rent than expert elicitation suggested, and agentic AI is actively eroding that share. The raised coefficient reflects this updated capability assessment. The residual 0.55 captures genuinely institutional workflow control — regulatory sign-offs, cross-organization approvals — that agentic AI cannot credibly substitute for in 2026. |
 | Access (A) | 0.40 | AI expands discovery of information and contacts but does not directly substitute for gated network access, off-market deal flow, or institutional gatekeeping. |
 | Credential (C) | 0.50 | Credentials are both informational signals and labor-market gatekeeping devices. Alternative credentialing via AI-administered competency assessment and skills-based hiring erodes the informational component but not the institutional one. Eloundou et al. (2024) identify exposure in credential-gated professions without predicting credential collapse. |
 | Technical (T) | 0.25 | Embodied physical execution remains largely outside current AI capability. Robotics adoption in professional services (surgical, construction, logistics) remains narrow and specialized. |
@@ -91,6 +94,8 @@ $$E_r = \mathbf{w}_r \cdot \mathbf{s} = \sum_i w_i s_i.$$
 $E_r \in [0, 1]$ represents the fraction of the role's asymmetry-based compensation that AI is capable of substituting at full adoption. A score near 1.0 indicates a role whose rent structure is nearly entirely AI-substitutable. A score near 0.1 indicates a role whose rents rest almost exclusively on channels AI cannot replicate.
 
 The framework's practical power is that it decomposes a compound prediction into interpretable components. Two roles with identical scores can have different rent vectors, and the recommended strategic adaptation differs by which channel dominates. A role that is exposed because its Knowledge rent is large has a different adaptation path than one exposed because its Credential rent is large.
+
+**A note on tier-specific predictions.** The framework as stated produces a single exposure score per role. When a profession is internally stratified by seniority (software engineering L3–L6+, medicine resident–attending, academia adjunct–tenured), tier-specific predictions require tier-specific rent vectors. Our empirical measurement in Section 4.3a found that attempting to derive tier-specific vectors from aggregate occupation-level task inventories (O*NET) produces uninformative results, because task inventories do not natively stratify by tier. Tier-specific rent vectors therefore require tier-specific data sources: scraped job postings by explicit tier level, time-allocation studies within firms, or compensation-structure decompositions. A formal two-layer extension — in which role-tier combinations are the units of analysis rather than roles — is a planned follow-on paper. In the present work, tier-specific predictions (Section 4.2) are based on expert elicitation informed by public career-ladder documents and validated against 2023–2025 labor-market signals (Section 4.3).
 
 ### 2.5 Relationship to Eloundou et al. (2024)
 
@@ -120,9 +125,9 @@ Estimated rent vectors based on expert elicitation and fee-survey decomposition:
 
 | Role | K | I | P | A | C | T | R | Exposure $E$ |
 |------|-----|-----|-----|-----|-----|-----|-----|------|
-| Owner's Representative | 0.10 | 0.50 | 0.10 | 0.05 | 0.05 | 0.00 | 0.20 | **0.66** |
-| General Contractor | 0.05 | 0.55 | 0.15 | 0.00 | 0.00 | 0.20 | 0.05 | **0.67** |
-| Designer / Architect | 0.15 | 0.30 | 0.10 | 0.00 | 0.25 | 0.15 | 0.05 | **0.61** |
+| Owner's Representative | 0.10 | 0.50 | 0.10 | 0.05 | 0.05 | 0.00 | 0.20 | **0.68** |
+| General Contractor | 0.05 | 0.55 | 0.15 | 0.00 | 0.00 | 0.20 | 0.05 | **0.69** |
+| Designer / Architect | 0.15 | 0.30 | 0.10 | 0.00 | 0.25 | 0.15 | 0.05 | **0.63** |
 
 Before any simulation is run, the framework predicts that OR and GC exposure scores are closely comparable and substantially higher than Designer exposure. Agent-based simulation with 50 Monte Carlo replicates across 11 AI adoption levels validates this ordering. At full AI adoption, OR margins compress from 30.4% to 14.3% (47% retained), GC margins from 13.3% to 4.0% (30% retained), and Designer margins from 17.1% to 10.1% (59% retained). Designers are correctly identified as the most resilient.
 
@@ -146,13 +151,13 @@ Software engineering is internally stratified into a hierarchy that the industry
 
 **Junior engineers (L3–L4)** are compensated primarily for interpretation work: translating product requirements into syntactically correct code, reading documentation, and executing well-specified tasks. Their knowledge rent is low because they are recent graduates. Their technical rent is moderate. Their relational rent is near zero. Estimated vector: $(K, I, P, A, C, T, R) = (0.10, 0.60, 0.00, 0.00, 0.10, 0.15, 0.05)$. Exposure $E_{\text{jr}} = 0.75$.
 
-**Mid-level engineers (L4–L5)** combine interpretation with some architectural judgment and local system knowledge. They translate designs into implementations. Vector: $(0.20, 0.50, 0.05, 0.00, 0.05, 0.15, 0.05)$. Exposure $E_{\text{mid}} = 0.73$.
+**Mid-level engineers (L4–L5)** combine interpretation with some architectural judgment and local system knowledge. They translate designs into implementations. Vector: $(0.20, 0.50, 0.05, 0.00, 0.05, 0.15, 0.05)$. Exposure $E_{\text{mid}} = 0.74$.
 
-**Senior engineers (L5–L6)** are paid for technical rent (system design, performance engineering, debugging under uncertainty), knowledge rent (deep codebase familiarity), and emerging relational rent (mentorship, cross-team collaboration). Vector: $(0.25, 0.25, 0.15, 0.00, 0.00, 0.20, 0.15)$. Exposure $E_{\text{sr}} = 0.56$.
+**Senior engineers (L5–L6)** are paid for technical rent (system design, performance engineering, debugging under uncertainty), knowledge rent (deep codebase familiarity), and emerging relational rent (mentorship, cross-team collaboration). Vector: $(0.25, 0.25, 0.15, 0.00, 0.00, 0.20, 0.15)$. Exposure $E_{\text{sr}} = 0.58$.
 
-**Staff / Principal engineers (L6+)** are compensated primarily for relational and process rents: organizational judgment, cross-team coordination, strategic direction, and accountability for large technical decisions. Vector: $(0.15, 0.10, 0.25, 0.00, 0.00, 0.15, 0.35)$. Exposure $E_{\text{prin}} = 0.37$.
+**Staff / Principal engineers (L6+)** are compensated primarily for relational and process rents: organizational judgment, cross-team coordination, strategic direction, and accountability for large technical decisions. Vector: $(0.15, 0.10, 0.25, 0.00, 0.00, 0.15, 0.35)$. Exposure $E_{\text{prin}} = 0.41$.
 
-The exposure profile declines steeply with seniority: 0.75 → 0.73 → 0.56 → 0.37. The framework predicts a barbell outcome in which junior and mid-level engineers face substantial compression while senior and principal engineers are relatively insulated. These tier-specific vectors are expert-elicited; Section 4.3a reports an independent empirical measurement of the aggregate software engineering rent vector using the U.S. Department of Labor's O*NET database, which validates the framework's aggregate prediction and identifies channel-composition biases in expert elicitation.
+The exposure profile declines with seniority: 0.75 → 0.74 → 0.58 → 0.41. The framework predicts a barbell outcome in which junior and mid-level engineers face substantial compression while senior and principal engineers are relatively insulated. These tier-specific vectors are expert-elicited; Section 4.3a reports an independent empirical measurement of the aggregate software engineering rent vector using the U.S. Department of Labor's O*NET database, which validates the framework's aggregate prediction and identifies channel-composition biases in expert elicitation.
 
 ### 4.3 Empirical signals from 2023 through 2025
 
@@ -182,11 +187,11 @@ The expert-elicited rent vectors in Section 4.2 are the framework's weakest link
 
 **Aggregation.** The base rent vector aggregates per-task allocations weighted by O*NET importance. Tier-specific vectors additionally weight by the tier characteristicness score. Ninety-five percent confidence intervals are produced by five hundred bootstrap resamples of the task set.
 
-**Results: aggregate validates.** The measured base software engineering rent vector is shown in Table 3 and Figure 1. The base exposure score is 0.58 (95% CI 0.55–0.61), compared to the expert-elicited value of approximately 0.61. The aggregate prediction survives: the framework's top-line exposure estimate for software engineering is robust across elicitation method.
+**Results: aggregate validates.** The measured base software engineering rent vector is shown in Table 3 and Figure 1. The base exposure score is 0.61 (95% CI 0.59–0.63), compared to the expert-elicited value of approximately 0.62. The aggregate prediction survives: the framework's top-line exposure estimate for software engineering is robust across elicitation method.
 
 ![Figure 1. Measured vs expert-elicited base software engineering rent vectors, with 95% bootstrap confidence intervals on the measured bars.](figures/fig1_measured_vs_expert.png)
 
-**Figure 1.** Base software engineering rent vector — measured from O*NET (n=78 task statements, blue) vs. expert-elicited from §4.2 (orange). Error bars on measured values are 95% bootstrap confidence intervals from 500 resamples. Aggregate exposure scores converge (measured 0.58 vs. elicited 0.61, overlapping within the confidence interval); channel composition diverges, with expert elicitation over-weighting Interpretation and under-weighting Process.
+**Figure 1.** Base software engineering rent vector — measured from O*NET (n=78 task statements, blue) vs. expert-elicited from §4.2 (orange). Error bars on measured values are 95% bootstrap confidence intervals from 500 resamples. Aggregate exposure scores converge (measured 0.61 vs. elicited 0.62, overlapping within the confidence interval); channel composition diverges, with expert elicitation over-weighting Interpretation and under-weighting Process.
 
 **Table 3. Measured vs expert-elicited base software engineering rent vectors (95% bootstrap CIs on measured).**
 
@@ -199,11 +204,11 @@ The expert-elicited rent vectors in Section 4.2 are the framework's weakest link
 | Credential (C) | 0.05 [0.04, 0.05] | 0.05 |
 | Technical (T) | 0.20 [0.16, 0.23] | 0.17 |
 | Relational (R) | 0.05 [0.04, 0.06] | 0.10 |
-| **Exposure Score** | **0.58 [0.55, 0.61]** | **0.61** |
+| **Exposure Score** | **0.61 [0.59, 0.63]** | **0.62** |
 
 **Results: channel composition diverges.** Two discrepancies between the measurement and the expert-elicited values deserve attention. Expert judgment over-weighted Interpretation (0.47 vs. 0.28 measured) and under-weighted Process (0.05 vs. 0.20 measured). The framework's channel definitions evidently cue expert respondents toward thinking of software engineering as interpretation-dominated, while the O*NET measurement captures substantial workflow-control (Process) content — release management, sprint coordination, code review gates, deployment approvals — that expert elicitation neglects. This is the first methodological finding of the measurement exercise: the aggregate exposure score is robust to elicitation method, but channel decomposition requires empirical anchoring to avoid systematic bias.
 
-**Results: tier stratification is flat-to-rising, not falling.** Figure 2 reports measured tier-stratified exposure scores. The measured pattern is 0.53 (Junior) → 0.56 (Mid) → 0.59 (Senior) → 0.62 (Principal), contradicting the expert-elicited prediction of 0.75 → 0.73 → 0.56 → 0.37. Figure 3 shows the underlying composition: principal-weighted tasks are higher on Knowledge (0.21) and Interpretation (0.33), while junior-weighted tasks are higher on Technical (0.27).
+**Results: tier stratification is flat-to-rising, not falling.** Figure 2 reports measured tier-stratified exposure scores. The measured pattern is 0.56 (Junior) → 0.59 (Mid) → 0.62 (Senior) → 0.65 (Principal), contradicting the expert-elicited prediction of 0.75 → 0.74 → 0.58 → 0.41. Figure 3 shows the underlying composition: principal-weighted tasks are higher on Knowledge (0.21) and Interpretation (0.33), while junior-weighted tasks are higher on Technical (0.27).
 
 ![Figure 2. Tier-stratified exposure scores: O*NET-measured vs expert-elicited.](figures/fig2_tier_exposure.png)
 
@@ -217,7 +222,13 @@ We interpret this divergence as a scope-of-data limitation rather than a refutat
 
 Meaningful tier stratification therefore requires data at the *time-allocation* level rather than the *task-inventory* level. Candidate sources include practitioner time-logging studies, scraped job postings by explicit tier level, and internal performance-review datasets. The present measurement validates the framework's aggregate prediction and reveals the limits of occupation-level data for tier work; it does not settle the Builder's Paradox empirically. The 2023–2025 labor-market signals documented in Section 4.3 — sixty-seven percent decline in entry-level postings, twenty percent decline in young-developer employment, compensation widening by tier — remain the primary evidence base for the tier-specific prediction. The measurement here establishes an independent foundation for the framework's aggregate claim.
 
-**Data and code availability.** All O*NET source data, classification prompts, per-task allocations, tier weights, aggregation code, bootstrap procedures, and figure generation scripts are released with this manuscript at https://github.com/fenago/rent-composition-framework. Readers can reproduce the exact numerical values in Table 3 and Figures 1–3 from the released materials.
+**Statistical methods.** Bootstrap confidence intervals are produced by five hundred task-level resamples with replacement (percentile method for the 2.5 and 97.5 percentiles). Resampling draws with replacement from the set of per-task rent allocations; each resample is aggregated via importance-weighted means (for the base vector) or importance-weighted-and-tier-weighted means (for tier-specific vectors) and the exposure score is recomputed on each resampled aggregate. The random seed for the bootstrap is fixed at 42 for reproducibility. We report the empirical 2.5th and 97.5th percentiles of the bootstrap distribution as the 95% confidence interval. Task-level resampling (as opposed to agent-level or within-task allocation bootstrapping) reflects the sampling uncertainty that matters most for the framework's downstream inference: the specific set of tasks in O*NET is itself one of many possible task inventories that could have been curated for these occupations, and our interest is in how sensitive the aggregate rent vector is to that task selection.
+
+**Inter-prompt reliability of the LLM classifier.** We test the classifier's stability by re-classifying five held-out tasks (sampled by stratified draw: two from Software Developers, two from Quality Assurance Analysts, one from Web Developers, seed 2026) using a semantically equivalent but syntactically distinct system prompt and user template. The alternate prompt reframes the task as a compensation-premium allocation rather than a rent-channel allocation but retains the same seven channels and the 100-point sum-to-total constraint. Across the thirty-five (task × channel) pairs produced, the primary and alternate classifications correlate at Pearson r = 0.85 with mean absolute error of 5.5 points. Per-channel correlations are 0.96 (Process), 0.93 (Access), 0.88 (Technical), 0.85 (Knowledge), 0.71 (Interpretation), 0.53 (Relational), and 0.40 (Credential). The weaker Relational and Credential correlations are largely attributable to those channels having small absolute allocations in most tasks — small absolute differences become large relative differences. We interpret the r = 0.85 overall agreement as adequate for the aggregate claims in this paper and flag future human-coder validation as follow-on work. Validation code, prompts, and results are released with the repository.
+
+**Reproducibility.** The measurement uses O*NET database version 28.3 (retrieved April 2026), Anthropic Claude model `claude-sonnet-4-6` as the classifier, bootstrap seed 42, and the inter-prompt reliability seed 2026. All source scripts (`classify.py`, `tier_classify.py`, `aggregate.py`, `validate.py`, `figures.py`), source data files, per-task classifier outputs, and aggregation results are released under an MIT license. Any reader can reproduce Tables 3 and the exposure scores in Figures 1–3 exactly from the released materials using the commands in the repository README. Re-running the full LLM classification pipeline on the same O*NET version with the same model and prompts produces outputs within the inter-prompt reliability bound documented above.
+
+**Data and code availability.** All O*NET source data, classification prompts, per-task allocations, tier weights, aggregation code, bootstrap procedures, validation results, and figure generation scripts are released with this manuscript at https://github.com/fenago/rent-composition-framework.
 
 ---
 
@@ -249,17 +260,17 @@ The author writes from inside this case study. Miami Dade College is among the l
 
 ### 5.2 Role rent compositions within higher education
 
-**Research-Intensive Faculty (R1 professors)** derive compensation from three channels primarily. Research production — grant writing, literature review, peer review, publication drafting — is overwhelmingly interpretation and knowledge work. Graduate teaching emphasizes knowledge and interpretation. Service roles have process and relational components. Estimated vector: $(0.30, 0.40, 0.05, 0.00, 0.15, 0.00, 0.10)$. Exposure $E_{\text{R1}} = 0.74$.
+**Research-Intensive Faculty (R1 professors)** derive compensation from three channels primarily. Research production — grant writing, literature review, peer review, publication drafting — is overwhelmingly interpretation and knowledge work. Graduate teaching emphasizes knowledge and interpretation. Service roles have process and relational components. Estimated vector: $(0.30, 0.40, 0.05, 0.00, 0.15, 0.00, 0.10)$. Exposure $E_{\text{R1}} = 0.75$.
 
-**Teaching-Intensive Faculty** (community college instructors, teaching-focused university faculty) derive compensation differently. Instruction at undergraduate levels is primarily technical — demonstrable skill transfer of capabilities like welding, programming, accounting, clinical technique — combined with substantial relational work around accountability, mentorship, and learning-outcome responsibility. Credential work is present but de-emphasized. Vector: $(0.15, 0.15, 0.05, 0.00, 0.10, 0.35, 0.20)$. Exposure $E_{\text{CC}} = 0.44$.
+**Teaching-Intensive Faculty** (community college instructors, teaching-focused university faculty) derive compensation differently. Instruction at undergraduate levels is primarily technical — demonstrable skill transfer of capabilities like welding, programming, accounting, clinical technique — combined with substantial relational work around accountability, mentorship, and learning-outcome responsibility. Credential work is present but de-emphasized. Vector: $(0.15, 0.15, 0.05, 0.00, 0.10, 0.35, 0.20)$. Exposure $E_{\text{CC}} = 0.45$.
 
-**Academic Advisors and Administrators** derive compensation from process rent (controlling degree audits, financial aid, enrollment), relational rent (student relationships), and residual access rent (institutional resource gatekeeping). Vector: $(0.05, 0.15, 0.40, 0.10, 0.05, 0.05, 0.20)$. Exposure $E_{\text{adv}} = 0.40$.
+**Academic Advisors and Administrators** derive compensation from process rent (controlling degree audits, financial aid, enrollment), relational rent (student relationships), and residual access rent (institutional resource gatekeeping). Vector: $(0.05, 0.15, 0.40, 0.10, 0.05, 0.05, 0.20)$. Exposure $E_{\text{adv}} = 0.46$.
 
-**Executive Leadership** (deans, provosts, presidents) derive compensation from relational rent, process rent, and residual credential rent. Vector: $(0.05, 0.10, 0.30, 0.00, 0.15, 0.05, 0.35)$. Exposure $E_{\text{exec}} = 0.35$.
+**Executive Leadership** (deans, provosts, presidents) derive compensation from relational rent, process rent, and residual credential rent. Vector: $(0.05, 0.10, 0.30, 0.00, 0.15, 0.05, 0.35)$. Exposure $E_{\text{exec}} = 0.40$.
 
 ### 5.3 The Mid-Market Mirror explicated
 
-The framework's prediction across higher education is striking. R1 faculty, whose compensation is dominated by interpretation and knowledge channels, face exposure scores near 0.74. Community college faculty, whose compensation rests on technical and relational channels, face scores near 0.44. At the institutional level, this means that AI adoption will reprice higher education in favor of institutions whose value rests on skill transfer and accountability rather than credential signaling and research production.
+The framework's prediction across higher education is striking. R1 faculty, whose compensation is dominated by interpretation and knowledge channels, face exposure scores near 0.75. Community college faculty, whose compensation rests on technical and relational channels, face scores near 0.45. At the institutional level, this means that AI adoption will reprice higher education in favor of institutions whose value rests on skill transfer and accountability rather than credential signaling and research production.
 
 The logic is the same as in AEC: the roles whose rents rest on interpretation-heavy work face the largest repricing, while roles whose rents rest on embodied skill transfer and long-duration relationships are insulated. Community colleges teach concrete, workplace-evaluable skills. Employer relationships depend on whether graduates can perform the job, not on the signaling value of the institution. Elite universities depend substantially on credential signaling. As AI assesses skills reliably and alternative credentials (portfolios, project demonstrations, AI-administered exams) erode the informational content of degrees, the institutions that rely most on credential signaling face the greatest repricing.
 
@@ -302,7 +313,7 @@ For practitioner application we distill the framework into a one-page Role Vulne
 
 **Step 2: Compute exposure score.**
 
-$$E = (0.85 K + 0.95 I + 0.30 P + 0.40 A + 0.50 C + 0.25 T + 0.10 R) / 100$$
+$$E = (0.85 K + 0.95 I + 0.45 P + 0.40 A + 0.50 C + 0.25 T + 0.10 R) / 100$$
 
 **Step 3: Interpret.**
 
@@ -318,12 +329,12 @@ $$E = (0.85 K + 0.95 I + 0.30 P + 0.40 A + 0.50 C + 0.25 T + 0.10 R) / 100$$
 | Role | K | I | P | A | C | T | R | Score | Tier |
 |------|---|---|---|---|---|---|---|-------|------|
 | Junior software engineer | 10 | 60 | 0 | 0 | 10 | 15 | 5 | 0.75 | High-Risk |
-| Community college faculty | 15 | 15 | 5 | 0 | 10 | 35 | 20 | 0.44 | Adapting |
-| General Contractor | 5 | 55 | 15 | 0 | 0 | 20 | 5 | 0.67 | Exposed |
-| R1 Research Faculty | 30 | 40 | 5 | 0 | 15 | 0 | 10 | 0.74 | Exposed |
-| Family nurse practitioner | 25 | 30 | 10 | 0 | 20 | 10 | 5 | 0.66 | Exposed |
-| Board-certified surgeon | 20 | 20 | 10 | 0 | 15 | 25 | 10 | 0.54 | Exposed |
-| Construction Owner's Rep | 10 | 50 | 10 | 5 | 5 | 0 | 20 | 0.66 | Exposed |
+| Community college faculty | 15 | 15 | 5 | 0 | 10 | 35 | 20 | 0.45 | Adapting |
+| General Contractor | 5 | 55 | 15 | 0 | 0 | 20 | 5 | 0.69 | Exposed |
+| R1 Research Faculty | 30 | 40 | 5 | 0 | 15 | 0 | 10 | 0.75 | High-Risk |
+| Family nurse practitioner | 25 | 30 | 10 | 0 | 20 | 10 | 5 | 0.68 | Exposed |
+| Board-certified surgeon | 20 | 20 | 10 | 0 | 15 | 25 | 10 | 0.56 | Exposed |
+| Construction Owner's Rep | 10 | 50 | 10 | 5 | 5 | 0 | 20 | 0.68 | Exposed |
 
 The Scorecard is intended for practitioner self-assessment and rapid organizational workforce planning rather than rigorous quantitative prediction. Its purpose is to make the framework's logic portable and action-oriented.
 

@@ -13,7 +13,7 @@ import pandas as pd
 CHANNELS = ["K", "I", "P", "A", "C", "T", "R"]
 # Sensitivity vector from framework_paper_v2.md Section 2.3
 SENSITIVITY = {
-    "K": 0.85, "I": 0.95, "P": 0.30, "A": 0.40,
+    "K": 0.85, "I": 0.95, "P": 0.45, "A": 0.40,
     "C": 0.50, "T": 0.25, "R": 0.10,
 }
 
