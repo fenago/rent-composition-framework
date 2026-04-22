@@ -51,6 +51,8 @@ Professional services, in this tradition, are markets where providers hold multi
 
 ### 2.2 The seven-channel rent vector
 
+A note on terminology before we define the channels. By "rent" we mean *economic rent* — the portion of a professional's fee that exceeds what the same work would cost in a fully competitive market for the same labor. A physician's fee is not purely payment for her time; a large part of it is a premium she earns because she knows things her patient does not, interprets information her patient cannot, and carries a license her patient cannot obtain. Each of those reasons is a separate "rent channel." The framework decomposes any professional's fee premium across seven such channels and predicts how much of each AI can substitute. When we say "Interpretation rent," we mean the portion of the fee attributable specifically to the practitioner's ability to synthesize and render judgment on complex information; when we say "Credential rent," we mean the portion attributable to the formal license or degree; and so on. The sum of the seven shares equals one by construction, so the rent vector is a partition of the fee premium.
+
 We identify seven rent channels that jointly capture sources of compensation premium in professional services. The channels are defined so that a role's total asymmetry-based compensation above a competitive-market floor can be attributed across them, with the channel shares summing to one.
 
 - **Knowledge Rent (K):** Compensation for possessing substantive domain facts the client lacks. Historically dominant in medicine (diagnosis), law (statutory knowledge), and engineering (code references).
@@ -125,7 +127,7 @@ Estimated rent vectors based on expert elicitation and fee-survey decomposition:
 
 | Role | K | I | P | A | C | T | R | Exposure $E$ |
 |------|-----|-----|-----|-----|-----|-----|-----|------|
-| Owner's Representative | 0.10 | 0.50 | 0.10 | 0.05 | 0.05 | 0.00 | 0.20 | **0.68** |
+| Owner's Representative | 0.10 | 0.50 | 0.10 | 0.05 | 0.05 | 0.00 | 0.20 | **0.67** |
 | General Contractor | 0.05 | 0.55 | 0.15 | 0.00 | 0.00 | 0.20 | 0.05 | **0.69** |
 | Designer / Architect | 0.15 | 0.30 | 0.10 | 0.00 | 0.25 | 0.15 | 0.05 | **0.63** |
 
@@ -193,20 +195,20 @@ The expert-elicited rent vectors in Section 4.2 are the framework's weakest link
 
 **Figure 1.** Base software engineering rent vector — measured from O*NET (n=78 task statements, blue) vs. expert-elicited from §4.2 (orange). Error bars on measured values are 95% bootstrap confidence intervals from 500 resamples. Aggregate exposure scores converge (measured 0.61 vs. elicited 0.62, overlapping within the confidence interval); channel composition diverges, with expert elicitation over-weighting Interpretation and under-weighting Process.
 
-**Table 3. Measured vs expert-elicited base software engineering rent vectors (95% bootstrap CIs on measured).**
+**Table 3. Measured vs expert-elicited base software engineering rent vectors (95% bootstrap CIs on measured). The expert-elicited column is the unweighted mean of the four tier-specific vectors in §4.2.**
 
-| Channel | Measured (O*NET, n=78) | Expert-elicited (§4.2 mean) |
+| Channel | Measured (O*NET, n=78) | Expert-elicited (§4.2 tier mean) |
 |---|---|---|
 | Knowledge (K) | 0.19 [0.17, 0.22] | 0.18 |
-| Interpretation (I) | 0.28 [0.25, 0.31] | 0.47 |
-| Process (P) | 0.20 [0.18, 0.23] | 0.05 |
+| Interpretation (I) | 0.28 [0.25, 0.31] | 0.36 |
+| Process (P) | 0.20 [0.18, 0.23] | 0.11 |
 | Access (A) | 0.03 [0.02, 0.04] | 0.00 |
-| Credential (C) | 0.05 [0.04, 0.05] | 0.05 |
-| Technical (T) | 0.20 [0.16, 0.23] | 0.17 |
-| Relational (R) | 0.05 [0.04, 0.06] | 0.10 |
+| Credential (C) | 0.05 [0.04, 0.05] | 0.04 |
+| Technical (T) | 0.20 [0.16, 0.23] | 0.16 |
+| Relational (R) | 0.05 [0.04, 0.06] | 0.15 |
 | **Exposure Score** | **0.61 [0.59, 0.63]** | **0.62** |
 
-**Results: channel composition diverges.** Two discrepancies between the measurement and the expert-elicited values deserve attention. Expert judgment over-weighted Interpretation (0.47 vs. 0.28 measured) and under-weighted Process (0.05 vs. 0.20 measured). The framework's channel definitions evidently cue expert respondents toward thinking of software engineering as interpretation-dominated, while the O*NET measurement captures substantial workflow-control (Process) content — release management, sprint coordination, code review gates, deployment approvals — that expert elicitation neglects. This is the first methodological finding of the measurement exercise: the aggregate exposure score is robust to elicitation method, but channel decomposition requires empirical anchoring to avoid systematic bias.
+**Results: channel composition diverges.** Three discrepancies between the measurement and the expert-elicited values deserve attention. Expert judgment over-weighted Interpretation (0.36 expert vs. 0.28 measured), over-weighted Relational (0.15 vs. 0.05), and under-weighted Process (0.11 vs. 0.20). The framework's channel definitions evidently cue expert respondents toward thinking of software engineering as interpretation-dominated and toward attributing cross-team collaboration to Relational rent when much of it is actually workflow control (Process rent). The O*NET measurement captures substantial workflow-control content — release management, sprint coordination, code review gates, deployment approvals — that expert elicitation blurs into Interpretation or Relational categories. This is the first methodological finding of the measurement exercise: the aggregate exposure score is robust to elicitation method, but channel decomposition requires empirical anchoring to avoid systematic bias.
 
 **Results: tier stratification is flat-to-rising, not falling.** Figure 2 reports measured tier-stratified exposure scores. The measured pattern is 0.56 (Junior) → 0.59 (Mid) → 0.62 (Senior) → 0.65 (Principal), contradicting the expert-elicited prediction of 0.75 → 0.74 → 0.58 → 0.41. Figure 3 shows the underlying composition: principal-weighted tasks are higher on Knowledge (0.21) and Interpretation (0.33), while junior-weighted tasks are higher on Technical (0.27).
 
@@ -260,7 +262,7 @@ The author writes from inside this case study. Miami Dade College is among the l
 
 ### 5.2 Role rent compositions within higher education
 
-**Research-Intensive Faculty (R1 professors)** derive compensation from three channels primarily. Research production — grant writing, literature review, peer review, publication drafting — is overwhelmingly interpretation and knowledge work. Graduate teaching emphasizes knowledge and interpretation. Service roles have process and relational components. Estimated vector: $(0.30, 0.40, 0.05, 0.00, 0.15, 0.00, 0.10)$. Exposure $E_{\text{R1}} = 0.75$.
+**Research-Intensive Faculty (R1 professors)** derive compensation from three channels primarily. Research production — grant writing, literature review, peer review, publication drafting — is overwhelmingly interpretation and knowledge work. Graduate teaching emphasizes knowledge and interpretation. Service roles have process and relational components. Estimated vector: $(0.30, 0.40, 0.05, 0.00, 0.15, 0.00, 0.10)$. Exposure $E_{\text{R1}} = 0.74$.
 
 **Teaching-Intensive Faculty** (community college instructors, teaching-focused university faculty) derive compensation differently. Instruction at undergraduate levels is primarily technical — demonstrable skill transfer of capabilities like welding, programming, accounting, clinical technique — combined with substantial relational work around accountability, mentorship, and learning-outcome responsibility. Credential work is present but de-emphasized. Vector: $(0.15, 0.15, 0.05, 0.00, 0.10, 0.35, 0.20)$. Exposure $E_{\text{CC}} = 0.45$.
 
@@ -270,7 +272,7 @@ The author writes from inside this case study. Miami Dade College is among the l
 
 ### 5.3 The Mid-Market Mirror explicated
 
-The framework's prediction across higher education is striking. R1 faculty, whose compensation is dominated by interpretation and knowledge channels, face exposure scores near 0.75. Community college faculty, whose compensation rests on technical and relational channels, face scores near 0.45. At the institutional level, this means that AI adoption will reprice higher education in favor of institutions whose value rests on skill transfer and accountability rather than credential signaling and research production.
+The framework's prediction across higher education is striking. R1 faculty, whose compensation is dominated by interpretation and knowledge channels, face exposure scores near 0.74. Community college faculty, whose compensation rests on technical and relational channels, face scores near 0.45. At the institutional level, this means that AI adoption will reprice higher education in favor of institutions whose value rests on skill transfer and accountability rather than credential signaling and research production.
 
 The logic is the same as in AEC: the roles whose rents rest on interpretation-heavy work face the largest repricing, while roles whose rents rest on embodied skill transfer and long-duration relationships are insulated. Community colleges teach concrete, workplace-evaluable skills. Employer relationships depend on whether graduates can perform the job, not on the signaling value of the institution. Elite universities depend substantially on credential signaling. As AI assesses skills reliably and alternative credentials (portfolios, project demonstrations, AI-administered exams) erode the informational content of degrees, the institutions that rely most on credential signaling face the greatest repricing.
 
@@ -331,10 +333,10 @@ $$E = (0.85 K + 0.95 I + 0.45 P + 0.40 A + 0.50 C + 0.25 T + 0.10 R) / 100$$
 | Junior software engineer | 10 | 60 | 0 | 0 | 10 | 15 | 5 | 0.75 | High-Risk |
 | Community college faculty | 15 | 15 | 5 | 0 | 10 | 35 | 20 | 0.45 | Adapting |
 | General Contractor | 5 | 55 | 15 | 0 | 0 | 20 | 5 | 0.69 | Exposed |
-| R1 Research Faculty | 30 | 40 | 5 | 0 | 15 | 0 | 10 | 0.75 | High-Risk |
-| Family nurse practitioner | 25 | 30 | 10 | 0 | 20 | 10 | 5 | 0.68 | Exposed |
-| Board-certified surgeon | 20 | 20 | 10 | 0 | 15 | 25 | 10 | 0.56 | Exposed |
-| Construction Owner's Rep | 10 | 50 | 10 | 5 | 5 | 0 | 20 | 0.68 | Exposed |
+| R1 Research Faculty | 30 | 40 | 5 | 0 | 15 | 0 | 10 | 0.74 | Exposed |
+| Family nurse practitioner | 25 | 30 | 10 | 0 | 20 | 10 | 5 | 0.67 | Exposed |
+| Board-certified surgeon | 20 | 20 | 10 | 0 | 15 | 25 | 10 | 0.55 | Exposed |
+| Construction Owner's Rep | 10 | 50 | 10 | 5 | 5 | 0 | 20 | 0.67 | Exposed |
 
 The Scorecard is intended for practitioner self-assessment and rapid organizational workforce planning rather than rigorous quantitative prediction. Its purpose is to make the framework's logic portable and action-oriented.
 

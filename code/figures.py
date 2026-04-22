@@ -26,8 +26,9 @@ CHANNEL_LABELS = {
 
 # Expert-elicited vectors from §4.2 of framework_paper_v2.md
 EXPERT_ELICITED = {
-    "base_se": {"K": 0.175, "I": 0.465, "P": 0.05, "A": 0.00,
-                "C": 0.05, "T": 0.165, "R": 0.10},
+    # base_se: unweighted mean of the four tier-specific vectors
+    "base_se": {"K": 0.175, "I": 0.3625, "P": 0.1125, "A": 0.00,
+                "C": 0.0375, "T": 0.1625, "R": 0.15},
     "Junior":    {"K": 0.10, "I": 0.60, "P": 0.00, "A": 0.00,
                   "C": 0.10, "T": 0.15, "R": 0.05},
     "Mid":       {"K": 0.20, "I": 0.50, "P": 0.05, "A": 0.00,
