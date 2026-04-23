@@ -1,0 +1,70 @@
+O*NET-SOC Code,Title,Task ID,Task,Importance,role
+11-9021.00,Construction Managers,20332,"Plan, schedule, or coordinate construction project activities to meet deadlines.",4.75,General Contractor
+11-9021.00,Construction Managers,3326,"Prepare and submit budget estimates, progress reports, or cost tracking reports.",4.65,General Contractor
+11-9021.00,Construction Managers,20336,"Interpret and explain plans and contract terms to representatives of the owner or developer, including administrative staff, workers, or clients.",4.6,General Contractor
+11-9021.00,Construction Managers,20340,Direct and supervise construction or related workers.,4.37,General Contractor
+11-9021.00,Construction Managers,20334,"Prepare contracts or negotiate revisions to contractual agreements with architects, consultants, clients, suppliers, or subcontractors.",4.2,General Contractor
+11-9021.00,Construction Managers,3314,"Confer with supervisory personnel, owners, contractors, or design professionals to discuss and resolve matters, such as work procedures, complaints, or construction problems.",4.2,General Contractor
+11-9021.00,Construction Managers,3315,"Plan, organize, or direct activities concerned with the construction or maintenance of structures, facilities, or systems.",4.1,General Contractor
+11-9021.00,Construction Managers,3323,Study job specifications to determine appropriate construction methods.,4.05,General Contractor
+11-9021.00,Construction Managers,3318,Inspect or review projects to monitor compliance with building and safety codes or other regulations.,4.0,General Contractor
+11-9021.00,Construction Managers,20333,"Investigate damage, accidents, or delays at construction sites to ensure that proper construction procedures are being followed.",4.0,General Contractor
+11-9021.00,Construction Managers,20335,"Implement new or modified plans in response to delays, bad weather, or construction site emergencies.",4.0,General Contractor
+11-9021.00,Construction Managers,3327,Develop or implement quality control programs.,3.85,General Contractor
+11-9021.00,Construction Managers,3325,Requisition supplies or materials to complete construction projects.,3.81,General Contractor
+11-9021.00,Construction Managers,3317,Determine labor requirements for dispatching workers to construction sites.,3.53,General Contractor
+11-9021.00,Construction Managers,20339,"Contract or oversee craft work, such as painting or plumbing.",3.5,General Contractor
+11-9021.00,Construction Managers,19522,Inspect or review projects to monitor compliance with environmental regulations.,3.42,General Contractor
+11-9021.00,Construction Managers,19523,"Perform, or contract others to perform, pre-building assessments, such as conceptual cost estimating, rough order of magnitude estimating, feasibility, or energy efficiency, environmental, and sustainability assessments.",3.37,General Contractor
+11-9021.00,Construction Managers,19520,Develop or implement environmental protection programs.,3.35,General Contractor
+11-9021.00,Construction Managers,20337,Apply for and obtain all necessary permits or licenses.,3.22,General Contractor
+11-9021.00,Construction Managers,20338,"Evaluate construction methods and determine cost-effectiveness of plans, using computer models.",3.06,General Contractor
+11-9021.00,Construction Managers,19518,Apply green building strategies to reduce energy costs or minimize carbon output or other sources of harm to the environment.,2.79,General Contractor
+11-9021.00,Construction Managers,19524,"Secure third-party verification from sources, such as Leadership in Energy Efficient Design (LEED), to ensure responsible design and building activities or to achieve favorable LEED ratings for building projects.",2.62,General Contractor
+11-9021.00,Construction Managers,19519,"Develop construction budgets to compare green and non-green construction alternatives, in terms of short-term costs, long-term costs, or environmental impacts.",2.61,General Contractor
+11-9021.00,Construction Managers,19521,Implement training programs on environmentally responsible building topics to update employee skills and knowledge.,2.33,General Contractor
+11-9021.00,Construction Managers,3331,Direct acquisition of land for construction projects.,2.27,General Contractor
+13-1082.00,Project Management Specialists,21462,Assign duties or responsibilities to project personnel.,,Owner Representative
+13-1082.00,Project Management Specialists,21463,Communicate with key stakeholders to determine project requirements and objectives.,,Owner Representative
+13-1082.00,Project Management Specialists,21464,Confer with project personnel to identify and resolve problems.,,Owner Representative
+13-1082.00,Project Management Specialists,21465,Create project status presentations for delivery to customers or project personnel.,,Owner Representative
+13-1082.00,Project Management Specialists,21466,"Develop or update project plans including information such as objectives, technologies, schedules, funding, and staffing.",,Owner Representative
+13-1082.00,Project Management Specialists,21467,"Identify project needs such as resources, staff, or finances by reviewing project objectives and schedules.",,Owner Representative
+13-1082.00,Project Management Specialists,21468,"Identify, review, or select vendors or consultants to meet project needs.",,Owner Representative
+13-1082.00,Project Management Specialists,21469,Monitor costs incurred by project staff to identify budget issues.,,Owner Representative
+13-1082.00,Project Management Specialists,21470,Monitor project milestones and deliverables.,,Owner Representative
+13-1082.00,Project Management Specialists,21471,Monitor the performance of project team members to provide performance feedback.,,Owner Representative
+13-1082.00,Project Management Specialists,21472,Negotiate with project stakeholders or suppliers to obtain resources or materials.,,Owner Representative
+13-1082.00,Project Management Specialists,21473,"Plan, schedule, or coordinate project activities to meet deadlines.",,Owner Representative
+13-1082.00,Project Management Specialists,21474,"Prepare and submit budget estimates, progress reports, or cost tracking reports.",,Owner Representative
+13-1082.00,Project Management Specialists,21475,Produce and distribute project documents.,,Owner Representative
+13-1082.00,Project Management Specialists,21476,"Propose, review, or approve modifications to project plans.",,Owner Representative
+13-1082.00,Project Management Specialists,21477,Recruit or hire project personnel.,,Owner Representative
+13-1082.00,Project Management Specialists,21478,"Report project status, such as budget, resources, technical issues, or customer satisfaction, to managers.",,Owner Representative
+13-1082.00,Project Management Specialists,21479,Request and review project updates to ensure deadlines are met.,,Owner Representative
+13-1082.00,Project Management Specialists,21480,Schedule or facilitate project meetings.,,Owner Representative
+13-1082.00,Project Management Specialists,21481,"Submit project deliverables to clients, ensuring adherence to quality standards.",,Owner Representative
+17-1011.00,"Architects, Except Landscape and Naval",20483,Develop final construction plans that include aesthetic representations of the structure or details for its construction.,4.48,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20479,"Prepare scale drawings or architectural designs, using computer-aided design or other tools.",4.43,Designer
+17-1011.00,"Architects, Except Landscape and Naval",130,"Prepare information regarding design, structure specifications, materials, color, equipment, estimated costs, or construction time.",4.4,Designer
+17-1011.00,"Architects, Except Landscape and Naval",131,Consult with clients to determine functional or spatial requirements of structures.,4.38,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20481,Meet with clients to review or discuss architectural drawings.,4.38,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20485,"Monitor the work of specialists, such as electrical engineers, mechanical engineers, interior designers, or sound specialists to ensure optimal form or function of designs or final structures.",4.33,Designer
+17-1011.00,"Architects, Except Landscape and Naval",136,Integrate engineering elements into unified architectural designs.,4.33,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20486,Plan layouts of structural architectural projects.,4.25,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20484,Conduct periodic on-site observations of construction work to monitor compliance with plans.,4.2,Designer
+17-1011.00,"Architects, Except Landscape and Naval",134,Prepare contract documents for building contractors.,4.1,Designer
+17-1011.00,"Architects, Except Landscape and Naval",19596,"Plan or design structures such as residences, office buildings, theatres, factories, or other structural properties in accordance with environmental, safety, or other regulations.",4.1,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20480,Direct activities of technicians engaged in preparing drawings or specification documents.,4.0,Designer
+17-1011.00,"Architects, Except Landscape and Naval",138,Administer construction contracts.,3.94,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20488,"Create three-dimensional or interactive representations of designs, using computer-assisted design software.",3.79,Designer
+17-1011.00,"Architects, Except Landscape and Naval",139,Represent clients in obtaining bids or awarding construction contracts.,3.71,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20482,"Develop marketing materials, proposals, or presentations to generate new work opportunities.",3.57,Designer
+17-1011.00,"Architects, Except Landscape and Naval",19595,"Perform predesign services, such as feasibility or environmental impact studies.",3.35,Designer
+17-1011.00,"Architects, Except Landscape and Naval",19593,"Design structures that incorporate environmentally friendly building practices or concepts, such as Leadership in Energy and Environmental Design (LEED) standards.",3.06,Designer
+17-1011.00,"Architects, Except Landscape and Naval",19592,Design or plan construction of green building projects to minimize adverse environmental impact or conserve energy.,3.0,Designer
+17-1011.00,"Architects, Except Landscape and Naval",19594,Gather information related to projects' environmental sustainability or operational efficiency.,2.95,Designer
+17-1011.00,"Architects, Except Landscape and Naval",20487,Inspect proposed building sites to determine suitability for construction.,2.89,Designer
+17-1011.00,"Architects, Except Landscape and Naval",19591,"Design environmentally sound structural upgrades to existing buildings, such as natural lighting systems, green roofs, or rainwater collection systems.",2.83,Designer
+17-1011.00,"Architects, Except Landscape and Naval",19590,Calculate potential energy savings by comparing estimated energy consumption of proposed design to baseline standards.,2.59,Designer
+17-1011.00,"Architects, Except Landscape and Naval",140,"Prepare operating and maintenance manuals, studies, or reports.",2.55,Designer
