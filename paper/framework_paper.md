@@ -5,7 +5,7 @@ School of Engineering and Technology, Miami Dade College
 elee@mdc.edu | ORCID: [0000-0002-1209-8565](https://orcid.org/0000-0002-1209-8565)
 Replication materials: https://github.com/fenago/rent-composition-framework
 
-*Working draft — version 3.0, April 2026*
+*Working draft — version 4.0, April 2026*
 
 ---
 
